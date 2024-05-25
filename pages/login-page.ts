@@ -14,8 +14,8 @@ export class LoginPage {
     this.page = page;
     this.loginMenuLink = page.locator(".navbar-right .nav-item");
     this.emailInput = page.locator('//*[@id="email"]');
-    this.passwordInput = page.locator('//*[@id="password"]');
-    this.loginButton = page.locator('//button[@type="submit"]');
+    this.passwordInput = page.locator('//*[@id="passwd"]');
+    this.loginButton = page.locator('//*[@id="SubmitLogin"]"]');
     this.userMenu = page.locator('//*[@id="navbarSupportedContent"]/div[2]/div/a');
     this.logoutButton = page.locator('//*[@id="logout-link"]');
     this.loggedInText = page.locator(".navbar-right span");

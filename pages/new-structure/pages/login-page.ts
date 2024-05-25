@@ -8,7 +8,7 @@ export class LoginPage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly submitButton: Locator;
-  readonly forgotPasswordLink: Locator;
+  readonly signinbutton: Locator;
 
   readonly registerButton: Locator;
 
@@ -21,20 +21,19 @@ export class LoginPage {
     this.navigationBar = new NavigationBar(page);
 
     this.emailInput = page.locator("input#email");
-    this.passwordInput = page.locator("input#password");
-    this.submitButton = page.locator("button", { hasText: "Přihlásit" });
-    this.forgotPasswordLink = page.locator("a", {
-      hasText: "Zapomněli jste své heslo?",
-    });
+    this.passwordInput = page.locator("input#passwd");
+    this.submitButton = page.locator("button#SubmitLogin", { hasText: "Sign in" });
+    this.signinbutton = page.locator(".account_user_name"
+  );
 
     this.registerButton = page.locator("a", { hasText: "Zaregistrujte se" });
 
-    this.errorFeedback = page.locator("span.invalid-feedback");
+    this.errorFeedback = page.locator("page-heading");
     this.errorToast = page.locator("div.toast");
   }
 
   async visit() {
-    await this.page.goto("/prihlaseni");
+    await this.page.goto("/login");
   }
 
   async login(email: string, password: string) {

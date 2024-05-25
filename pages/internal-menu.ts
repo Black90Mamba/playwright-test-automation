@@ -15,7 +15,7 @@ export class InternalMenu {
     this.termsSection = page.locator("//*[@id='adminNavbar']//a[contains(text(), 'Termíny')]");
     this.applicationsSection = page.locator("//*[@id='adminNavbar']//a[contains(text(), 'Přihlášky')]");
     this.categoriesSection = page.locator("//*[@id='adminNavbar']//a[contains(text(), 'Kategorie')]");
-    this.newsSection = page.locator("//*[@id='adminNavbar']//a[contains(text(), 'Aktuality')]");
+    this.newsSection = page.getByText("Sign in");
     this.exportsSection = page.locator("//*[@id='adminNavbar']//a[contains(text(), 'Exporty')]");
   }
 
